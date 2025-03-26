@@ -7,6 +7,9 @@ import NProgress from 'nprogress';
 export default function TopLoader() {
   const pathname = usePathname();
 
+  NProgress.configure({ showSpinner: false });
+  NProgress.configure({ easing: 'ease', speed: 400 });
+
   useEffect(() => {
     NProgress.start();
     NProgress.done();
