@@ -11,10 +11,11 @@
   --color-zoho-dark-gray: #333333;
   --color-zoho-light-gray: #FAFAFA;
   --color-zoho-white: #FFFFFF;
+  --color-zoho-beige: #FFF5E7;
 }
 
 /* NProgress */
 #nprogress .bar {
-  background: var(--color-zoho-blue); /* ou qualquer outra */
+  background: linear-gradient(to right, var(--color-zoho-yellow), var(--color-zoho-red), var(--color-zoho-blue), var(--color-zoho-green)); /* ou qualquer outra */
   height: 3px;
 }
