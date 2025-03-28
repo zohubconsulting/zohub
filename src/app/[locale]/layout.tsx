@@ -13,7 +13,7 @@ export default async function LocaleLayout({
 }) {
   // ⚠️ Next.js exige await para acesso de `params` em layouts com rotas dinâmicas
   // Mesmo que `params` não seja uma Promise, isso evita warnings em dev
-  const { locale } = await params;
+  const locale = params.locale;
 
   if (!supportedLocales.includes(locale)) {
     notFound();
