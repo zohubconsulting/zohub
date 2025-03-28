@@ -5,7 +5,11 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Logo from '../../public/logo.svg';
 
-export default function MenuHeader() {
+interface MenuHeaderProps {
+  locale: string;
+};
+
+export default function MenuHeader({ locale }: MenuHeaderProps) {
   const [open, setOpen] = useState(false);
 
   return (

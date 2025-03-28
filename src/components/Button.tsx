@@ -8,7 +8,7 @@ interface ButtonProps {
 export default function Button({ to, children }: ButtonProps) {
 
   return (
-    <Link href={to} className='bg-zoho-red text-white px-[30px] py-[18px] rounded-[2px] text-[14px] font-medium uppercase'>
+    <Link href={to} className='bg-zoho-red text-white px-[25px] md:px-[30px] py-[14px] md:py-[18px] rounded-[2px] text-[14px] font-medium uppercase'>
       {children}
     </Link>
   );
