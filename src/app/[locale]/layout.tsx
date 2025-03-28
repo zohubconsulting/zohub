@@ -2,24 +2,28 @@ import { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import ClientLayoutWrapper from '../../components/ClientLayoutWrapper';
 
-const supportedLocales = ['pt-br', 'en', 'es', 'hi', 'ja'];
+// 1. Defina os locales suportados como constante tipada
+const supportedLocales = ['pt-br', 'en', 'es', 'hi', 'ja'] as const;
+type Locale = typeof supportedLocales[number];
 
-// Adicionado generateStaticParams para informar ao Next.js sobre os parâmetros válidos
-export async function generateStaticParams() {
+// 2. Gere os parâmetros estáticos
+export function generateStaticParams() {
   return supportedLocales.map((locale) => ({ locale }));
 }
 
+// 3. Defina a tipagem das props
 interface LayoutProps {
   children: ReactNode;
-  params: { locale: string };
+  params: { locale: Locale }; // Usando o tipo específico
 }
 
+// 4. Implementação do layout
 export default function LocaleLayout({
   children,
-  params,
+  params: { locale }
 }: LayoutProps) {
-  const locale = params.locale;
-
+  // A verificação agora é redundante (já que generateStaticParams garante os valores)
+  // Mas mantemos para segurança durante desenvolvimento
   if (!supportedLocales.includes(locale)) {
     notFound();
   }
