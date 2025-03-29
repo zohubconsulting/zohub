@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 
 interface LayoutProps {
   children: ReactNode;
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }
 
 export default async function LocaleLayout({
@@ -20,7 +20,7 @@ export default async function LocaleLayout({
 }: LayoutProps) {
   // Adicionando await mesmo que não seja necessário
   // Isso resolve o problema de tipagem no Next.js 15
-  const { locale } = await Promise.resolve(params);
+  const { locale } = await params;
 
   if (!supportedLocales.includes(locale)) {
     notFound();
