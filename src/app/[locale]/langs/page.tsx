@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export default function Langs() {
+
   return (
     <div>
       <div className="w-full bg-zoho-light-gray overflow-hidden">
