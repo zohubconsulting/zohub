@@ -9,16 +9,21 @@ export default function RedirectRoot() {
   const router = useRouter();
 
   useEffect(() => {
-    const saved = localStorage.getItem('preferredLanguage');
+    const cookies = document.cookie.split('; ').reduce((acc: any, curr) => {
+      const [key, value] = curr.split('=');
+      acc[key] = value;
+      return acc;
+    }, {});
+
+    const saved = cookies['locale'];
 
     if (saved) {
-      // Se o idioma já foi salvo, redireciona para ele
       router.replace(`/${saved}`);
       return;
     }
 
-    // Se for a primeira visita, força pt-br como padrão
-    localStorage.setItem('preferredLanguage', defaultLocale);
+    // Se for a primeira visita, define cookie e redireciona
+    document.cookie = `locale=${defaultLocale}; path=/; max-age=31536000`; // 1 ano
     router.replace(`/${defaultLocale}`);
   }, [router]);
 
