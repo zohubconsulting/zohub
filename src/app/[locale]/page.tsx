@@ -184,7 +184,7 @@ export default async function Home({
             <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start mb-24">
               <div className="order-3 md:order-1 md:w-1/2 md:text-right md:pr-12 mt-6 md:mt-0">
                 <h3 className="text-xl md:text-2xl font-semibold mb-3 text-center md:text-right bg-black">Proposta sob medida</h3>
-                <p className="text-gray-300 md:text-right max-w-[420px] ml-auto text-center bg-black pb-1">
+                <p className="text-gray-300 md:text-right max-w-[420px] ml-auto text-center bg-black pb-1 text-[14px] md:text-[16px]">
                   Montamos uma proposta personalizada com base no diagnóstico, com as ferramentas Zoho mais adequadas para
                   seu cenário.
                 </p>
@@ -207,7 +207,7 @@ export default async function Home({
               </div>
               <div className="order-3 md:w-1/2 md:pl-12 mt-6 md:mt-0">
                 <h3 className="text-xl md:text-2xl font-semibold mb-3 text-center md:text-left bg-black">Implantação e configuração</h3>
-                <p className="text-gray-300 max-w-[420px] text-center md:text-left bg-black pb-1">
+                <p className="text-gray-300 max-w-[420px] text-center md:text-left bg-black pb-1 text-[14px] md:text-[16px]">
                   Cuidamos da implementação do Zoho, configurando de forma alinhada ao seu negócio e integrando com outros
                   sistemas se necessário.
                 </p>
@@ -218,7 +218,7 @@ export default async function Home({
             <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start mb-24">
               <div className="order-3 md:order-1 md:w-1/2 md:text-right md:pr-12 mt-6 md:mt-0">
                 <h3 className="text-xl md:text-2xl font-semibold mb-3  text-center md:text-right bg-black">Treinamento e suporte</h3>
-                <p className="text-gray-300  max-w-[420px] ml-auto text-center md:text-right bg-black pb-1">
+                <p className="text-gray-300  max-w-[420px] ml-auto text-center md:text-right bg-black pb-1 text-[14px] md:text-[16px]">
                   Treinamos você e sua equipe para utilizar o Zoho no dia a dia e oferecemos suporte para garantir que
                   tudo funcione como esperado.
                 </p>
@@ -241,7 +241,7 @@ export default async function Home({
               </div>
               <div className="order-3 md:w-1/2 md:pl-12 mt-6 md:mt-0">
                 <h3 className="text-xl md:text-2xl font-semibold mb-3 text-center md:text-left bg-black">Conclusão final</h3>
-                <p className="text-gray-300 max-w-[420px] text-center md:text-left bg-black pb-1">
+                <p className="text-gray-300 max-w-[420px] text-center md:text-left bg-black pb-1 text-[14px] md:text-[16px]">
                   Entregamos seus projeto elencando todos os pontos levantados no início finalizando a implementação.
                 </p>
               </div>
