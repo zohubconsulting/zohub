@@ -507,7 +507,7 @@ export default async function Home({ params }: LayoutProps) {
         </div>
       </div>
       <div className="bg-zoho-black w-full border-t-1 border-zinc-700 border-dashed py-[20px] flex items-center justify-center font-normal text-[14px] text-zoho-white">
-        © 2025 Zohub . Todos os direitos reservados.
+        © 2025 Zohub. Todos os direitos reservados.
       </div>
       {/* End Footer */}
     </div>
