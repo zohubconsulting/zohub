@@ -5,20 +5,15 @@ import LogoImage from "../../../public/logo.svg";
 import GrowthImage from "../../../public/growth.svg";
 import { texts } from "./localeData";
 import Divider from "../../../public/divider.svg";
-import { Check, Instagram } from "lucide-react";
+import { Check } from "lucide-react";
 import {
-  AiFillFacebook,
-  AiFillInstagram,
-  AiFillLinkedin,
-} from "react-icons/ai";
-import { TfiInstagram } from "react-icons/tfi";
-import {
+  BiLinkAlt,
   BiLogoFacebook,
-  BiLogoInstagram,
   BiLogoInstagramAlt,
   BiLogoLinkedin,
   BiLogoWhatsapp,
   BiLogoYoutube,
+  BiSolidMessageRounded,
 } from "react-icons/bi";
 import Link from "next/link";
 
@@ -37,9 +32,9 @@ export default async function Home({ params }: LayoutProps) {
   return (
     <div>
       {/* Hero */}
-      <div className="w-full bg-zoho-light-gray h-[590px] sm:h-[720px] md:h-screen overflow-hidden">
+      <div className="w-full bg-zoho-light-gray h-[590px] sm:h-[720px] md:h-[1020px] overflow-hidden">
         <div className="max-w-screen-xl mx-auto px-5 flex flex-col items-center">
-          <h1 className="block py-4 font-normal pt-[80px] sm:pt-[100px] md:pt-[120px] pb-[20px] md:pb-[30px] text-[24px] sm:text-[34px] md:text-[45px]/13 text-center w-[400px] sm:w-[550px] md:w-[635px]">
+          <h1 className="block py-4 font-normal pt-[30px] sm:pt-[100px] md:pt-[120px] pb-[20px] md:pb-[30px] text-[24px] sm:text-[34px] md:text-[45px]/13 text-center w-[400px] sm:w-[550px] md:w-[635px]">
             {texts[locale].hero.title}
           </h1>
 
@@ -53,51 +48,45 @@ export default async function Home({ params }: LayoutProps) {
 
           <Button to="/">{texts[locale].hero.button}</Button>
 
-          <Image src={HeroImage} alt="Hero" className="mt-[80px]" />
+          <Image
+            src={HeroImage}
+            alt="Hero"
+            className="mt-[60px] sm:mt-[80px]"
+          />
         </div>
       </div>
       {/* End hero */}
 
       {/* Benefits */}
       <div className="w-full overflow-hidden bg-zoho-beige">
-        <div className="max-w-screen-xl mx-auto py-[60px] sm:py-[90px] md:py-[115px] flex flex-col items-center">
+        <div className="max-w-screen-xl mx-auto py-[60px] pb-[100px] sm:py-[90px] md:py-[115px] flex flex-col items-center">
           <div className="flex flex-col items-center">
             <h2 className="font-medium text-[14px] tracking-[5px] uppercase mb-[15px]">
-              Benefícios
+              Soluções
             </h2>
             <Image src={Divider} alt="Divider" className="" />
           </div>
 
-          <p className="block py-4 font-normal pb-[20px] md:pb-[30px] text-[24px] sm:text-[34px] md:text-[45px]/13 text-center w-[320px] sm:w-[490px] md:w-[635px] mb-[12px] sm:mb-[52px] md:mb-[72px]">
+          <p className="block py-4 font-normal pb-[60px] md:pb-[30px] text-[24px] sm:text-[34px] md:text-[45px]/13 text-center w-[320px] sm:w-[490px] md:w-[635px] mb-[12px] sm:mb-[52px] md:mb-[72px]">
             Soluções Zoho que impulsionam o seu negócio
           </p>
 
-          <div className="w-full flex flex-row flex-wrap justify-center gap-[30px]">
+          <div className="w-full flex flex-row flex-wrap justify-center gap-[70px] md:gap-[30px]">
             <div className="w-full max-w-[400px] flex flex-col items-center gap-3 px-[30px] sm:px-[20px] md:px-[10px]">
-              <Image
-                src="/image1.png"
-                alt="Benefit 1"
-                width={140}
-                height={133}
-              />
-              <p className="text-center text-[16px] sm:text-[20px] font-medium">
-                Implantação e customização Zoho
+              <Image src="/image1.svg" alt="Benefit 1" width={85} height={85} />
+              <p className="text-center text-[16px] sm:text-[20px] font-medium mt-[10px] md:mt-[15px]">
+                Implantação e customização
               </p>
               <p className="text-center text-[14px] sm:text-[16px] font-normal">
-                Prepare sua operação com o Zoho personalizada para o seu
-                segmento. Nosso time ajuda você a implantar e adaptar a Zoho às
-                necessidades do seu negócio.
+                Prepare sua operação com aplicativos Zoho personalizados para o
+                seu segmento. Nosso time ajuda você a implantar e adaptar a Zoho
+                às necessidades do seu negócio.
               </p>
             </div>
 
             <div className="w-full max-w-[400px] flex flex-col items-center gap-3 px-[30px] sm:px-[20px] md:px-[10px]">
-              <Image
-                src="/image2.png"
-                alt="Benefit 2"
-                width={140}
-                height={133}
-              />
-              <p className="text-center text-[16px] sm:text-[20px] font-medium">
+              <Image src="/image2.svg" alt="Benefit 2" width={85} height={85} />
+              <p className="text-center text-[16px] sm:text-[20px] font-medium mt-[10px] md:mt-[15px]">
                 Automação de processos
               </p>
               <p className="text-center text-[14px] sm:text-[16px] font-normal">
@@ -108,19 +97,13 @@ export default async function Home({ params }: LayoutProps) {
             </div>
 
             <div className="w-full max-w-[400px] flex flex-col items-center gap-3 px-[30px] sm:px-[20px] md:px-[10px]">
-              <Image
-                src="/image3.png"
-                alt="Benefit 3"
-                width={140}
-                height={133}
-                className="mt-[20px] md:mt-0"
-              />
-              <p className="text-center text-[16px] sm:text-[20px] font-medium">
+              <Image src="/image3.svg" alt="Benefit 3" width={85} height={85} />
+              <p className="text-center text-[16px] sm:text-[20px] font-medium mt-[10px] md:mt-[15px]">
                 Integração com backend
               </p>
               <p className="text-center text-[14px] sm:text-[16px] font-normal">
                 Integre a Zoho com outros sistemas e elimine a entrada manual de
-                dados, facilitando o fluxo de informações.
+                dados, facilitando o fluxo de dados.
               </p>
             </div>
           </div>
@@ -130,21 +113,26 @@ export default async function Home({ params }: LayoutProps) {
 
       {/* Zohub */}
       <div className="w-full bg-zoho-white overflow-hidden">
-        <div className="max-w-screen-xl gap-6 mx-auto px-5 flex flex-col md:flex-row items-center py-[60px] sm:py-[90px] md:py-[115px] pb-0">
-          <div className="w-full md:max-w-[50%] flex flex-col gap-[30px]">
-            <div className="w-full mx-auto">
-              <h3 className="block font-normal pb-[10px] md:pb-[30px] text-[24px] sm:text-[34px] md:text-[45px]/13 text-center md:text-left">
-                Por que escolher a <span className="font-bold">Zohub</span>?
+        <div className="max-w-screen-xl gap-6 mx-auto px-5 flex flex-col md:flex-row items-center py-[60px] sm:py-[90px] md:py-[115px]">
+          <div className="w-full md:max-w-[50%] flex flex-row justify-start">
+            <div className="w-full mx-auto flex flex-col justify-start">
+              <h3 className="block font-normal pb-[10px] md:pb-[20px] text-[24px] sm:text-[34px] md:text-[45px]/13 text-center md:text-left">
+                Por que nos <span className="font-semibold">escolher</span>?
               </h3>
-              <p className="text-center md:text-left text-[14px] sm:text-[16px]">
+              <p className="text-center md:text-left text-[14px] sm:text-[16px] md:max-w-[550px] leading-[30px] mb-[20px]">
                 Ajudamos empresas a obter o máximo das soluções Zoho, com
                 consultoria estratégica, implementação eficiente e foco em
                 resultados reais.
               </p>
+              <div className="w-full flex flex-row justify-center md:justify-start mb-[10px] md:mb-[0px]">
+                <Button to="/">Entre em contato</Button>
+              </div>
             </div>
+          </div>
 
+          <div className="w-full md:max-w-[50%] md:pt-[20px] flex flex-row items-start">
             <div className="w-full mx-auto">
-              <ul className="flex flex-col gap-4 mx-[10px]">
+              <ul className="flex flex-col gap-8 mx-[10px]">
                 <li>
                   <div className="flex flex-row gap-[15px] items-top">
                     <div>
@@ -213,12 +201,32 @@ export default async function Home({ params }: LayoutProps) {
                     </div>
                   </div>
                 </li>
+
+                <li>
+                  <div className="flex flex-row gap-[15px] items-top">
+                    <div>
+                      <Image
+                        src="/check-icon.svg"
+                        alt="Check icon"
+                        width={34}
+                        height={26.31}
+                        className="mt-[3px] md:mt-[1px]"
+                      />
+                    </div>
+                    <div>
+                      <span className="block mb-[5px] font-medium">
+                        Soluções práticas para sua empresa
+                      </span>
+                      <p className="text-[14px] sm:text-[16px]">
+                        Automação e organização para facilitar sua rotina de
+                        trabalho.
+                      </p>
+                    </div>
+                  </div>
+                </li>
               </ul>
             </div>
-          </div>
-
-          <div className="relative w-full md:max-w-[50%] pt-[20px] flex flex-row items-center justify-center h-[380px] md:h-[320px]">
-            <Image
+            {/* <Image
               src="/image4.png"
               alt="Zohub"
               width={437}
@@ -232,7 +240,7 @@ export default async function Home({ params }: LayoutProps) {
               width={239}
               height={307}
               className="absolute bottom-[-20px] md:bottom-0"
-            />
+            /> */}
           </div>
         </div>
       </div>
@@ -256,7 +264,7 @@ export default async function Home({ params }: LayoutProps) {
           {/* Workflow Steps */}
           <div className="relative">
             {/* Vertical Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-dashed border-l-2 border-gray-700 z-0"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-dashed border-l-1 border-gray-700 z-0"></div>
 
             {/* Step 1 */}
             <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start mb-24">
@@ -360,25 +368,29 @@ export default async function Home({ params }: LayoutProps) {
       {/* End step-by-step */}
 
       {/* Join us */}
-      <div className="w-full bg-zoho-light-yellow h-[690px] sm:h-[790px] md:h-[910px] overflow-hidden">
+      <div className="w-full bg-zoho-light-yellow sm:h-[790px] md:h-[910px] overflow-hidden">
         <div className="max-w-screen-xl mx-auto px-5 flex flex-col items-center">
           <h1 className="block py-4 font-normal pt-[80px] sm:pt-[100px] md:pt-[120px] pb-[20px] md:pb-[30px] text-[24px] sm:text-[34px] md:text-[45px]/13 text-center w-[400px] sm:w-[550px] md:w-[635px]">
             Junte-se a nós!
           </h1>
 
-          <p className="w-[350px] sm:w-[450px] md:w-[665px] text-center text-[14px] sm:text-[16px] md:text-[20px] font-normal mb-[15px]">
+          <p className="w-[350px] sm:w-[450px] md:w-[665px] text-center text-[14px] sm:text-[16px] md:text-[20px] font-normal mb-[15px] px-[30px] md:px-[20px]">
             Faça parte dessa comunidade que só cresce! entre em contato e agende
             uma conversa, ficaremos felizes em ouvi-lo!
           </p>
 
-          <p className="w-[350px] sm:w-[450px] md:w-[665px] text-center text-[14px] sm:text-[16px] md:text-[20px] font-normal mb-[35px]">
+          <p className="w-[350px] sm:w-[450px] md:w-[665px] text-center text-[14px] sm:text-[16px] md:text-[20px] font-normal mb-[35px] px-[30px] md:px-[20px]">
             Vamos juntos transformar a gestão da sua empresa com soluções
             práticas e personalizadas em Zoho.
           </p>
 
           <Button to="/">FALE COM UM ESPECIALISTA</Button>
 
-          <Image src={GrowthImage} alt="Hero" className="mt-[100px]" />
+          <Image
+            src={GrowthImage}
+            alt="Hero"
+            className="mt-[60px] md:mt-[100px]"
+          />
         </div>
       </div>
       {/* End join us */}
@@ -386,11 +398,11 @@ export default async function Home({ params }: LayoutProps) {
       {/* Footer */}
       <div className="w-full bg-zoho-black">
         <div className="max-w-screen-xl mx-auto px-5 flex flex-col items-center text-zoho-white">
-          <div className="w-full flex flex-col lg:flex-row gap-8 py-[80px]">
+          <div className="w-full flex flex-col lg:flex-row gap-[20px] md:gap-8 py-[20px] pt-[30px] md:py-[80px]">
             <div className="w-full lg:w-[40%] flex flex-col gap-5 p-[20px]">
               <div className="flex flex-col gap-3">
                 <Image src={LogoImage} alt="logoImage" width={34} />
-                <span className="inline-block text-[24px] font-light mt-[5px]">
+                <span className="inline-block text-[24px] font-semibold mt-[5px]">
                   Zohub Consulting
                 </span>
               </div>
@@ -452,10 +464,11 @@ export default async function Home({ params }: LayoutProps) {
             </div>
 
             <div className="w-full lg:w-[30%] px-[25px] py-[20px] bg-zinc-900">
-              <span className="block font-bold text-[18px] border-b-1 border-zinc-700 border-dashed pb-[10px] mb-[15px]">
-                Links rápidos
+              <span className="font-bold text-[18px] border-b-1 border-zinc-700 border-dashed pb-[10px] mb-[15px] flex flex-row items-center justify-between">
+                <span>Menu</span>
+                <BiLinkAlt />
               </span>
-              <ul className="flex flex-col gap-[10px]">
+              <ul className="flex flex-col gap-[10px] font-[14px]">
                 <li>
                   <Link className="hover:underline block" href="/">
                     Início
@@ -491,14 +504,15 @@ export default async function Home({ params }: LayoutProps) {
             </div>
 
             <div className="w-full lg:w-[30%] px-[25px] py-[20px] bg-zoho-red">
-              <span className="block font-bold text-[18px] border-b-1 border-red-400 border-dashed pb-[10px] mb-[10px]">
-                Fale conosco
+              <span className="font-bold text-[18px] border-b-1 border-red-400 border-dashed pb-[10px] mb-[15px] flex flex-row items-center justify-between">
+                <span>Fale conosco</span>
+                <BiSolidMessageRounded />
               </span>
               <div className="flex flex-col gap-[5px]">
-                <span className="block hover:underline font-bold text-[22px]">
+                <span className="block hover:underline font-bold text-[18px]">
                   hello@zohub.com.br
                 </span>
-                <span className="block hover:underline font-bold text-[22px]">
+                <span className="block hover:underline font-bold text-[18px]">
                   +55 48 9 9954-7441
                 </span>
               </div>
@@ -506,8 +520,9 @@ export default async function Home({ params }: LayoutProps) {
           </div>
         </div>
       </div>
-      <div className="bg-zoho-black w-full border-t-1 border-zinc-700 border-dashed py-[20px] flex items-center justify-center font-normal text-[14px] text-zoho-white">
-        © 2025 Zohub. Todos os direitos reservados.
+      <div className="bg-zoho-black w-full border-t-1 border-zinc-700 border-dashed py-[30px] px-[20px] text-center flex items-center justify-center font-normal text-[14px] text-zoho-white">
+        © 2025 Zohub Consulting. <br className="inline-block md:hidden" /> Todos
+        os direitos reservados.
       </div>
       {/* End Footer */}
     </div>
