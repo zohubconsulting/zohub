@@ -4,6 +4,7 @@ interface ButtonProps {
   to: string;
   type?: "info" | "danger" | "warning"; // Restrição do tipo a valores específicos
   children: React.ReactNode;
+  className?: string;
 }
 
 type TypeColors = "bg-zoho-blue" | "bg-zoho-red" | "bg-zoho-yellow";
@@ -18,13 +19,18 @@ const types = (key: "info" | "danger" | "warning"): TypeColors => {
   return map[key]; // Acesso à chave de forma segura
 };
 
-export default function Button({ to, type = "danger", children }: ButtonProps) {
+export default function Button({
+  to,
+  type = "danger",
+  children,
+  className,
+}: ButtonProps) {
   return (
     <Link
       href={to}
       className={`${types(
         type
-      )} text-white px-[25px] md:px-[30px] py-[14px] md:py-[18px] rounded-[2px] text-[14px] font-medium uppercase`}
+      )} text-white px-[25px] md:px-[30px] py-[14px] md:py-[18px] rounded-[2px] text-[14px] font-medium uppercase ${className}`}
     >
       {children}
     </Link>
