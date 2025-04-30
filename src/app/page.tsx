@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-const defaultLocale = 'pt-br';
+const defaultLocale = "pt-br";
 
 export default function RedirectRoot() {
   const router = useRouter();
 
   useEffect(() => {
-    const cookies = document.cookie.split('; ').reduce((acc: any, curr) => {
-      const [key, value] = curr.split('=');
+    const cookies = document.cookie.split("; ").reduce((acc: any, curr) => {
+      const [key, value] = curr.split("=");
       acc[key] = value;
       return acc;
     }, {});
 
-    const saved = cookies['locale'];
+    const saved = cookies["locale"];
 
     if (saved) {
       router.replace(`/${saved}`);

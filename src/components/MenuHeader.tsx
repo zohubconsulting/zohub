@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Logo from "../../public/logo.svg";
 import { Equal, X } from "lucide-react";
-
+import NProgress from "nprogress";
 interface MenuHeaderProps {
   locale: string;
 }
@@ -32,13 +32,48 @@ export default function MenuHeader({ locale }: MenuHeaderProps) {
 
         {/* Menu desktop */}
         <nav className="hidden md:flex gap-7 text-zoho-black text-md font-medium">
-          <Link href={createLocalizedHref("/")}>Início</Link>
-          <Link href={createLocalizedHref("/solutions")}>Soluções</Link>
-          <Link href={createLocalizedHref("/zohub")}>Zohub</Link>
-          <Link href={createLocalizedHref("/workflow")}>Workflow</Link>
-          <Link href={createLocalizedHref("/join-us")}>Junte-se a nós</Link>
-          <Link href={createLocalizedHref("/blog")}>Blog</Link>
-          <Link href={createLocalizedHref("/langs")}>PT-BR ⯆</Link>
+          <Link
+            href={createLocalizedHref("/")}
+            onClick={() => NProgress.start()}
+          >
+            Início
+          </Link>
+          <Link
+            href={createLocalizedHref("/solutions")}
+            onClick={() => NProgress.start()}
+          >
+            Soluções
+          </Link>
+          <Link
+            href={createLocalizedHref("/zohub")}
+            onClick={() => NProgress.start()}
+          >
+            Zohub
+          </Link>
+          <Link
+            href={createLocalizedHref("/workflow")}
+            onClick={() => NProgress.start()}
+          >
+            Workflow
+          </Link>
+          <Link
+            href={createLocalizedHref("/join-us")}
+            onClick={() => NProgress.start()}
+          >
+            Junte-se a nós
+          </Link>
+          <Link
+            href={createLocalizedHref("/blog")}
+            onClick={() => NProgress.start()}
+          >
+            Blog
+          </Link>
+          <Link
+            href={createLocalizedHref("/langs")}
+            onClick={() => NProgress.start()}
+          >
+            PT-BR ⯆
+          </Link>
         </nav>
 
         {/* Botão mobile */}
@@ -54,13 +89,43 @@ export default function MenuHeader({ locale }: MenuHeaderProps) {
       {open && (
         <div className="md:hidden bg-zoho-white shadow-[0_1px_1px_rgba(0,0,0,0.01)] px-5 py-4 pt-2">
           <nav className="flex flex-col gap-4 text-zoho-black text-md font-normal">
-            <Link href={createLocalizedHref("/")}>Início</Link>
-            <Link href={createLocalizedHref("/solutions")}>Soluções</Link>
+            <Link
+              href={createLocalizedHref("/")}
+              onClick={() => NProgress.start()}
+            >
+              Início
+            </Link>
+            <Link
+              href={createLocalizedHref("/solutions")}
+              onClick={() => NProgress.start()}
+            >
+              Soluções
+            </Link>
             <Link href={createLocalizedHref("/zohub")}>Zohub</Link>
-            <Link href={createLocalizedHref("/workflow")}>Workflow</Link>
-            <Link href={createLocalizedHref("/join-us")}>Junte-se a nós</Link>
-            <Link href={createLocalizedHref("/blog")}>Blog</Link>
-            <Link href={createLocalizedHref("/langs")}>PT-BR ⯆</Link>
+            <Link
+              href={createLocalizedHref("/workflow")}
+              onClick={() => NProgress.start()}
+            >
+              Workflow
+            </Link>
+            <Link
+              href={createLocalizedHref("/join-us")}
+              onClick={() => NProgress.start()}
+            >
+              Junte-se a nós
+            </Link>
+            <Link
+              href={createLocalizedHref("/blog")}
+              onClick={() => NProgress.start()}
+            >
+              Blog
+            </Link>
+            <Link
+              href={createLocalizedHref("/langs")}
+              onClick={() => NProgress.start()}
+            >
+              PT-BR ⯆
+            </Link>
           </nav>
         </div>
       )}
